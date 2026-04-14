@@ -1,0 +1,17 @@
+    def objective_layer(self, layer, resx):
+        layer = layer
+        resx = resx
+
+        def wrapper(theta):
+            if layer == 0:
+                res_list = theta
+            else:
+                res_list = np.zeros(2 * (layer + 1))
+                res_list[slice(layer, len(res_list), layer + 1)] = theta
+                for i in range(layer):
+                    res_list[slice(i, len(res_list), layer + 1)] = resx[i]
+            value = np.real(self.execute_circuit(res_list).expectation_value(self.hc))
+            print("expected value is : ", value)
+            return value
+
+        return wrapper
