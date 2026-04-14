@@ -1,0 +1,10 @@
+    def best_cost(self , valid_paths):
+        
+"""
+    def results(self):
+        if not self.Best_optimum_value:
+            if self.ncities >=7:
+                raise NotImplementedError("Sorry, Number of city is greater than 6 and can not be solved by brute force analysis")
+            valid_paths = [bn for bn in self.binary_numbers if self.check_validity(bn)]
+            self.Best_optimum_value = self.best_cost(valid_paths)
+"""
